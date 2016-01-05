@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="robots" content="noindex">
+		<title>Projet Visu Bio-Info</title>
+		<link rel="stylesheet" href="css/index.css">
+		<script type="text/javascript" src="js/paper.js"></script>
+		<script type="text/paperscript" canvas="map" src="js/canvas.js"></script>
+	</head>
+	<body>
+		<h1>Page principale</h1>
+		<hr>
+		<div class="map">
+			<div><span id="datainfo"></span></div>
+			<canvas id="map"></canvas>
+			<div>
+				<button onclick="paper.tools.displayDay(1)">Afficher la heatMap du vendredi</button>
+				<button onclick="paper.tools.displayDay(2)">Afficher la heatMap du samedi</button>
+				<button onclick="paper.tools.displayDay(3)">Afficher la heatMap du dimanche</button>
+				<button onclick="paper.tools.promptID()">Tracker une personne</button>
+			</div>
+		</div>
+		<div id="info">
+			<h3>Informations sur le parc :</h3>
+
+			<ul>
+				<li>Point 0:0 en bas à gauche de la carte</li>
+				<li>3 entrées/sorties :
+					<ol>
+						<li>0:67</li>
+						<li>99:77</li>
+						<li>63:99</li>
+					</ol>
+				</li>
+				<li>11374 personnes dans le parc durant les 3 jours :
+					<ol>
+						<li>Vendredi 3557 avec 3557 check-in entrées, en 3556 movement sorties (id : <a href="#map" onclick="paper.tools.getID(657863)">657863</a>)</li>
+						<li>Samedi 6411 avec 6411 check-in entrées, en 6411 movement sorties (mais une personne ; id = <a href="#map" onclick="paper.tools.getID(1975667 < )">1975667</a> ; ne passe pas la dernière borne 63:98)</li>
+						<li>Dimanche 7569 avec 7568 check-in entrées (id : <a href="#map" onclick="paper.tools.getID(164723)">164723</a> ne fait pas de check-in à l'entrée, 98:77), en 7568 movement sorties (id : <a href="#map" onclick="paper.tools.getID(898576)">898576</a> ne bouge plus du 43:56 à 10h19m59s)</li>
+					</ol>
+					--> Il y a donc des personnes qui sont venus au moins 2 jours et des employés dans les personnes pointées.
+				</li>
+				<li>Des personnes sont venues sur plusieurs jours :
+					<ol>
+						<li>Vendredi-Samedi 2169</li>
+						<li>Vendredi-Dimanche 1813</li>
+						<li>Samedi-Dimanche 3994</li>
+					</ol>
+					--> Cela montre que les gens viennent plus souvent sur un week-end.
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

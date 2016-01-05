@@ -1,0 +1,19 @@
+body {
+	background-color: white
+}
+.map
+{	float: left;
+}
+#map
+{
+	width: 800px;
+	height: 800px;
+	margin: 10px auto;
+	background-image: url("../img/map.png");
+	background-size: 800px;
+}
+#info
+{
+	float: right;
+    width: 600px;
+}
